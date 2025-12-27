@@ -1,0 +1,51 @@
+{
+  "domain": "ml",
+  "level": "beginner",
+  "roadmap": {
+    "Foundations": {
+      "Math and Statistics": [
+        "Linear Algebra",
+        "Calculus",
+        "Probability Theory"
+      ],
+      "Programming Basics": [
+        "Python Programming Fundamentals",
+        " Familiarity with NumPy and Pandas"
+      ]
+    },
+    "Core Concepts": {
+      "Supervised Learning": [
+        "Regression",
+        "Classification"
+      ],
+      "Unsupervised Learning": [
+        "Clustering",
+        "Dimensionality Reduction"
+      ],
+      "Model Evaluation": [
+        "Accuracy Metrics",
+        "Confusion Matrix"
+      ]
+    },
+    "Advanced Topics": {
+      "Deep Learning": [
+        "Neural Networks",
+        "Convolutional Neural Networks"
+      ],
+      "Specialized Topics": [
+        "Generative Adversarial Networks",
+        "Transfer Learning"
+      ]
+    },
+    "Real-World Application": {
+      "Projects": [
+        "Image Classification with TensorFlow",
+        "Sentiment Analysis with PyTorch"
+      ],
+      "Tools and Practices": [
+        "Working with Keras and scikit-learn",
+        "Using Jupyter Notebooks for Data Exploration"
+      ]
+    }
+  }
+}

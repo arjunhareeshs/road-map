@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 AI Roadmap Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🧭</span>
+                <h1>AI Roadmap Generator</h1>
+            </div>
+            <p class="tagline">Generate comprehensive learning roadmaps powered by Llama 3</p>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="input-card">
+                <div class="input-group">
+                    <label for="domain">
+                        <span class="label-icon">📚</span>
+                        Engineering Domain
+                    </label>
+                    <input 
+                        type="text" 
+                        id="domain" 
+                        placeholder="e.g., Machine Learning, Web Development, Electronics..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="level">
+                        <span class="label-icon">📊</span>
+                        Expertise Level
+                    </label>
+                    <div class="level-buttons">
+                        <button class="level-btn active" data-level="Beginner">
+                            🌱 Beginner
+                        </button>
+                        <button class="level-btn" data-level="Intermediate">
+                            🌿 Intermediate
+                        </button>
+                        <button class="level-btn" data-level="Advanced">
+                            🌳 Advanced
+                        </button>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="generate-btn">
+                    <span class="btn-icon">✨</span>
+                    Generate Roadmap
+                </button>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <section id="loadingSection" class="loading-section hidden">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+            <p class="loading-text">🤖 AI is crafting your roadmap...</p>
+            <p class="loading-subtext">This may take a moment</p>
+        </section>
+
+        <!-- Error State -->
+        <section id="errorSection" class="error-section hidden">
+            <div class="error-card">
+                <span class="error-icon">❌</span>
+                <p id="errorMessage">Something went wrong</p>
+                <button id="retryBtn" class="retry-btn">Try Again</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tree">
+                    🌲 Tree View
+                </button>
+                <button class="tab-btn" data-tab="diagram">
+                    📊 Diagram
+                </button>
+                <button class="tab-btn" data-tab="json">
+                    📋 JSON
+                </button>
+            </div>
+
+            <!-- Tree View -->
+            <div id="treeTab" class="tab-content active">
+                <div class="result-header">
+                    <h2 id="roadmapTitle"></h2>
+                    <span id="roadmapLevel" class="level-badge"></span>
+                    <span id="totalWeeks" class="weeks-badge"></span>
+                </div>
+                <div id="treeView" class="tree-view"></div>
+            </div>
+
+            <!-- Diagram View -->
+            <div id="diagramTab" class="tab-content hidden">
+                <div class="diagram-container">
+                    <div id="mermaidDiagram" class="mermaid"></div>
+                </div>
+            </div>
+
+            <!-- JSON View -->
+            <div id="jsonTab" class="tab-content hidden">
+                <pre id="jsonView" class="json-view"></pre>
+            </div>
+
+            <!-- Actions -->
+            <div class="result-actions">
+                <button id="downloadBtn" class="action-btn">
+                    💾 Download JSON
+                </button>
+                <button id="copyBtn" class="action-btn">
+                    📋 Copy to Clipboard
+                </button>
+                <button id="newRoadmapBtn" class="action-btn primary">
+                    ✨ New Roadmap
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Powered by <strong>Llama 3</strong> via Ollama 🦙</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
